@@ -83,7 +83,7 @@ class AnimatePointAnnotationActivity : AppCompatActivity(), MapLoadedCallback {
       }
       animateCarList = create(animationOptionList)
     }
-//    animateCars()
+    animateCars()
   }
 
   override fun onDestroy() {
@@ -150,9 +150,9 @@ class AnimatePointAnnotationActivity : AppCompatActivity(), MapLoadedCallback {
       endValue: Point
     ): Point {
       val lat =
-        startValue.latitude() + (endValue.latitude() - startValue.latitude()) * fraction
+        startValue.latitude() + (endValue.latitude() - startValue.latitude()) * fraction*fraction
       val lon =
-        startValue.longitude() + (endValue.longitude() - startValue.longitude()) * fraction
+        startValue.longitude() + (endValue.longitude() - startValue.longitude()) * fraction*fraction
       return Point.fromLngLat(lon, lat)
     }
   }

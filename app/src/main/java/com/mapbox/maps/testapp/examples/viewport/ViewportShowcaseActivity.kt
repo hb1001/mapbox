@@ -1,6 +1,7 @@
 package com.mapbox.maps.testapp.examples.viewport
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
@@ -160,6 +161,11 @@ class ViewportShowcaseActivity : AppCompatActivity() {
         FOLLOW -> viewport.transitionTo(followPuckViewportState)
         OVERVIEW -> viewport.transitionTo(overviewViewportState)
       }
+    }
+    viewportButton.setOnLongClickListener {
+      val intent = Intent(this, ViewportShowcaseActivity2::class.java)
+      startActivity(intent)
+      true
     }
   }
 
